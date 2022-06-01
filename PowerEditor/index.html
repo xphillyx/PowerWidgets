@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Power Editor - the best text editor for Windows</title>
+    
+    <!-- WinUI WASM -->
+    <link rel="stylesheet" href="../styles/winui-web.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../fonts/FluentSystemIcons-Regular.css" />
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- index.js -->
+    <script src="index.js"></script>
+  </head>
+  <body id="rootLayout" onresize="Page_OnResize();">
+    <header id="nav-bar">
+      <div id="logo-div">
+        <img src="img/app_logo.png" height="42px" width="42px" />
+        <a id="logo-text">Power Editor</a>
+      </div>
+      <div id="menu-separator"></div>
+      <div id="SearchBoxControl" class="ms-textbox" style="position: fixed; top: 17px; right: 172px; height: 35px; width: 220px;">
+        <input id="SearchBoxInput" class="ms-text-input" type="text" placeholder="Search here..." autocomplete="on" onload="SearchBoxInput_OnLoad();" onkeydown="SearchBoxInput_KeyDown" />
+        <i class="ms-textbox-icon icon-ic_fluent_search_20_regular" onclick="SearchButton_Click();"></i>
+      </div>
+      <script>
+        document.getElementById("SearchBoxInput").addEventListener('keydown', SearchBoxInput_KeyDown);
+      </script>
+      <button id="get-app-button" class="ms-button-accent" style="width: 150px; height: 40px;" onclick="GetApp();">
+        Get Power Editor
+      </button>
+    </header>
+  </body>
+</html>
+
